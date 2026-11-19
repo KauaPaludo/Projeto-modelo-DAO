@@ -48,5 +48,15 @@ public class DB {
             throw new DbException(e.getMessage());
         }
     }
+    public static void closeStatement(){
+        if(connection!=null){
+            try {
+                connection.close();
+            }
+            catch (SQLException e){
+                throw new DbException(e.getMessage());
+            }
+        }
+    }
 
 }
