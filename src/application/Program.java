@@ -6,6 +6,7 @@ import entities.Seller;
 import model.dao.DaoFactory;
 import model.dao.SellerDao;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -24,6 +25,11 @@ public class Program {
         for(Seller s: list){
             System.out.println(s);
         }
+        List<Seller> findall = sellerDao.findAll();
+        for(Seller fall : findall){
+            System.out.println(fall);
+        }
+
 
         DB.closeConnection();
     }
