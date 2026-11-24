@@ -34,6 +34,12 @@ public class Program {
         sellerDao.insert(newSeller);
         System.out.println("New seller "+newSeller.getId());
 
+        seller = sellerDao.findById(1);
+        seller.setName("Kaua");
+        sellerDao.update(seller);
+        System.out.println("Update complete");
+        System.out.println(seller);
+
 
         DB.closeConnection();
     }
