@@ -6,12 +6,12 @@ import entities.Seller;
 import model.dao.DaoFactory;
 import model.dao.SellerDao;
 
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
+import java.util.*;
 
 public class Program {
     public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        Locale.setDefault(Locale.US);
 
         Department dp = new Department(1,"Carros");
         System.out.println(dp);
@@ -29,6 +29,10 @@ public class Program {
         for(Seller fall : findall){
             System.out.println(fall);
         }
+
+        Seller newSeller = new Seller(null,"Greg","Greg@gmail.com",new Date(),4500.00,department);
+        sellerDao.insert(newSeller);
+        System.out.println("New seller "+newSeller.getId());
 
 
         DB.closeConnection();
